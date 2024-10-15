@@ -26,7 +26,7 @@ impl<E: Display> Display for SerializeError<E> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         use SerializeError::*;
         match self {
-            SouceCaused(msg) => f.write_str(&msg),
+            SouceCaused(msg) => f.write_str(msg),
             SinkCaused(e) => e.fmt(f),
             NoGeometryField => f.write_str("feature has no geometry field"),
             InvalidFeatureStructure => f.write_str("feature must be a struct"),

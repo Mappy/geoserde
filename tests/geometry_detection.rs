@@ -263,30 +263,39 @@ impl SinkMock {
 impl GeometrySink for SinkMock {
     type Err = Infallible;
     fn coord(&mut self, _: usize, _: f64, _: f64) -> Result<(), Self::Err> {
-        Ok(self.write_geometry())
+        self.write_geometry();
+        Ok(())
     }
     fn point_start(&mut self, _: usize) -> Result<(), Self::Err> {
-        Ok(self.write_geometry())
+        self.write_geometry();
+        Ok(())
     }
     fn point_end(&mut self, _: usize) -> Result<(), Self::Err> {
-        Ok(self.write_geometry())
+        self.write_geometry();
+        Ok(())
     }
     fn linestring_start(&mut self, _: bool, _: usize, _: usize) -> Result<(), Self::Err> {
-        Ok(self.write_geometry())
+        self.write_geometry();
+        Ok(())
     }
     fn linestring_end(&mut self, _: bool, _: usize) -> Result<(), Self::Err> {
-        Ok(self.write_geometry())
+        self.write_geometry();
+        Ok(())
     }
     fn polygon_start(&mut self, _: bool, _: usize) -> Result<(), Self::Err> {
-        Ok(self.write_geometry())
+        self.write_geometry();
+        Ok(())
     }
     fn polygon_end(&mut self, _: bool, _: usize) -> Result<(), Self::Err> {
-        Ok(self.write_geometry())
+        self.write_geometry();
+        Ok(())
     }
     fn geometry_start(&mut self) -> Result<(), Self::Err> {
-        Ok(self.write_geometry())
+        self.write_geometry();
+        Ok(())
     }
     fn geometry_end(&mut self) -> Result<(), Self::Err> {
-        Ok(self.write_geometry())
+        self.write_geometry();
+        Ok(())
     }
 }

@@ -39,73 +39,95 @@ impl SinkMock {
 impl GeometrySink for SinkMock {
     type Err = Infallible;
     fn coord(&mut self, _: usize, _: f64, _: f64) -> Result<(), Self::Err> {
-        Ok(self.write_geometry())
+        self.write_geometry();
+        Ok(())
     }
     fn point_start(&mut self, _: usize) -> Result<(), Self::Err> {
-        Ok(self.write_geometry())
+        self.write_geometry();
+        Ok(())
     }
     fn point_end(&mut self, _: usize) -> Result<(), Self::Err> {
-        Ok(self.write_geometry())
+        self.write_geometry();
+        Ok(())
     }
     fn linestring_start(&mut self, _: bool, _: usize, _: usize) -> Result<(), Self::Err> {
-        Ok(self.write_geometry())
+        self.write_geometry();
+        Ok(())
     }
     fn linestring_end(&mut self, _: bool, _: usize) -> Result<(), Self::Err> {
-        Ok(self.write_geometry())
+        self.write_geometry();
+        Ok(())
     }
     fn polygon_start(&mut self, _: bool, _: usize) -> Result<(), Self::Err> {
-        Ok(self.write_geometry())
+        self.write_geometry();
+        Ok(())
     }
     fn polygon_end(&mut self, _: bool, _: usize) -> Result<(), Self::Err> {
-        Ok(self.write_geometry())
+        self.write_geometry();
+        Ok(())
     }
     fn geometry_start(&mut self) -> Result<(), Self::Err> {
-        Ok(self.write_geometry())
+        self.write_geometry();
+        Ok(())
     }
     fn geometry_end(&mut self) -> Result<(), Self::Err> {
-        Ok(self.write_geometry())
+        self.write_geometry();
+        Ok(())
     }
 }
 impl PropertySink for SinkMock {
     type Err = Infallible;
     fn bool(&mut self, _: usize, _: &str, _: bool) -> Result<(), Self::Err> {
-        Ok(self.write_property())
+        self.write_property();
+        Ok(())
     }
     fn i8(&mut self, _: usize, _: &str, _: i8) -> Result<(), Self::Err> {
-        Ok(self.write_property())
+        self.write_property();
+        Ok(())
     }
     fn i16(&mut self, _: usize, _: &str, _: i16) -> Result<(), Self::Err> {
-        Ok(self.write_property())
+        self.write_property();
+        Ok(())
     }
     fn i32(&mut self, _: usize, _: &str, _: i32) -> Result<(), Self::Err> {
-        Ok(self.write_property())
+        self.write_property();
+        Ok(())
     }
     fn i64(&mut self, _: usize, _: &str, _: i64) -> Result<(), Self::Err> {
-        Ok(self.write_property())
+        self.write_property();
+        Ok(())
     }
     fn u8(&mut self, _: usize, _: &str, _: u8) -> Result<(), Self::Err> {
-        Ok(self.write_property())
+        self.write_property();
+        Ok(())
     }
     fn u16(&mut self, _: usize, _: &str, _: u16) -> Result<(), Self::Err> {
-        Ok(self.write_property())
+        self.write_property();
+        Ok(())
     }
     fn u32(&mut self, _: usize, _: &str, _: u32) -> Result<(), Self::Err> {
-        Ok(self.write_property())
+        self.write_property();
+        Ok(())
     }
     fn u64(&mut self, _: usize, _: &str, _: u64) -> Result<(), Self::Err> {
-        Ok(self.write_property())
+        self.write_property();
+        Ok(())
     }
     fn f32(&mut self, _: usize, _: &str, _: f32) -> Result<(), Self::Err> {
-        Ok(self.write_property())
+        self.write_property();
+        Ok(())
     }
     fn f64(&mut self, _: usize, _: &str, _: f64) -> Result<(), Self::Err> {
-        Ok(self.write_property())
+        self.write_property();
+        Ok(())
     }
     fn bytes(&mut self, _: usize, _: &str, _: &[u8]) -> Result<(), Self::Err> {
-        Ok(self.write_property())
+        self.write_property();
+        Ok(())
     }
     fn str(&mut self, _: usize, _: &str, _: &str) -> Result<(), Self::Err> {
-        Ok(self.write_property())
+        self.write_property();
+        Ok(())
     }
 }
 impl FeatureSink for SinkMock {
