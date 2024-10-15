@@ -292,7 +292,10 @@ impl<S: GeometrySink> Serializer for &mut GeometrySerializer<'_, S> {
 
         let (x, y) = match self.x {
             Some(x) => (x, v),
-            None => return Ok(self.x = Some(v)),
+            None => return {
+                self.x = Some(v);
+                Ok(())
+            },
         };
 
         if self.coord_index == 0 {
@@ -312,7 +315,7 @@ impl<S: GeometrySink> Serializer for &mut GeometrySerializer<'_, S> {
                 [Container::Rect { .. }, ..] => {
                     self.start_polygon_linestring(5)?;
                 }
-                [containers @ ..] => todo!("{:?}", containers),
+                containers => todo!("{:?}", containers),
             }
         }
 

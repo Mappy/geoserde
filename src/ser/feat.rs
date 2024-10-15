@@ -15,7 +15,7 @@ impl<S> KeySerializer<S> {
     pub fn new() -> Self {
         KeySerializer {
             value: String::new(),
-            _phantom: PhantomData::default(),
+            _phantom: PhantomData,
         }
     }
     pub fn to_string(self) -> String {
